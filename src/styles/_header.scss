@@ -1,0 +1,85 @@
+.App-header {
+  background-color: $accent-color;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: white;
+  flex-direction: row;
+  width: 100vw;
+  padding: 20px 0;
+
+  .header-logo, .header-navigation{
+    position: relative;
+  }
+
+  .header-logo{
+    width: 30vw;
+    float: left;
+  }
+
+  .header-navigation .search-container {
+    float: left;
+
+    .search-bar{
+      width: 40vw;
+      height: 40px;
+      padding: 0 1vw;
+      font-size: 1rem;
+      border-radius:25px;
+      border: 1px solid #ccc;
+    }
+
+    .search-bar:focus{
+      border-radius:0;
+    }
+
+  }
+
+  .header-navigation{
+    float: right;
+    flex-wrap: nowrap;
+    width: 70vw;
+
+    a {
+      float: right;
+      padding-right: 5vw;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      :hover{
+        background-color: yellow;
+        color: black;
+      }
+    }
+
+    .search-button {
+      padding: 16px;
+      margin-top: 5px;
+      margin-left: 39vw;
+      border: 0;
+      background: url(assets/search-solid.svg);
+      background-position: 0;
+      background-repeat: no-repeat;
+      position: absolute;
+    }
+
+  }
+
+}
+
+.App-header .header-navigation .search-button {
+  @media screen and (max-width: 1200px) {
+    margin-left: 37vw;
+  }
+
+  @media screen and (max-width: 760px) {
+    margin-left: 35vw;
+  }
+
+  @media screen and (max-width: 515px) {
+    margin-left: 33vw;
+  }
+}
