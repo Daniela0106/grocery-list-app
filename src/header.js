@@ -6,7 +6,7 @@ function Header() {
         <div className="App-header">
             <div className="header-logo">Logo goes here</div>
             <div className="header-navigation">
-                <a href="#about">About</a>
+                <a href="#about">My list</a>
                 <div className="search-container">
                     <form action="">
                         <button className="search-button" type="submit"></button>
