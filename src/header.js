@@ -10,7 +10,7 @@ function Header() {
                 <div className="search-container">
                     <form action="">
                         <button className="search-button" type="submit"></button>
-                        <input className="search-bar" type="text" placeholder="Find article..." name="search"></input>
+                        <input className="search-bar" type="text" placeholder="Find grocery item..." name="search"></input>
                     </form>
                 </div>
             </div>

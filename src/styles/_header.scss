@@ -28,7 +28,7 @@
       padding: 0 1vw;
       font-size: 1rem;
       border-radius:25px;
-      border: 1px solid #ccc;
+      border: 2px solid #ccc;
     }
 
     .search-bar:focus{
@@ -45,6 +45,7 @@
     a {
       float: right;
       padding-right: 5vw;
+      line-height: 40px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
