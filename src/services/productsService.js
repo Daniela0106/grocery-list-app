@@ -2,17 +2,17 @@ import React, {Component} from 'react';
 import '../styles/App.scss';
 import axios from 'axios';
 
-let products, results;
+let products;
 
 class ProductsService extends Component {
 
-/*
-    handleClick () {
-        //Add item to list
-    }
-*/
+    /*
+        handleClick () {
+            //Add item to list
+        }
+    */
 
-    constructor (props) {
+    constructor(props) {
         super(props);
         this.state = {
             isLoaded: false,
@@ -33,31 +33,34 @@ class ProductsService extends Component {
             .catch(error => console.log('Request failed: ', error));
     };
 
-    render(){
+    render() {
 
-        var { isLoaded, items } = this.state;
+        var {isLoaded, items} = this.state;
 
-        if (!isLoaded){
-            return <div>Loading...</div>
-        } else {
-            return <div>
-                <ul>
-                    {items.map(item => (
-                        <li key={item.id}>{item.text}</li>
-                    ))};
-                </ul>
+        if (!isLoaded) {
+            return <div className="Products">
+                <div>Loading...
+                </div>
             </div>
+        } else {
+            return <div className="Products">
+                    {items.map(item => (
+                        <div className="product-item" key={item.id}>{item.text}</div>
+                    ))}
+                {console.log(this.props)}
+                <div className="search-placeholder"></div>
+                <div className="search-placeholder"></div>
+                <div className="search-placeholder"></div>
+                <div className="search-placeholder"></div>
+            </div>
+
+        }
+        {/*                <button className='button' onClick={this.handleClick}>
+                    Click Me
+                </button>*/
         }
 
-        return (
 
-            <div className="Products">
-
-{/*                <button className='button' onClick={this.handleClick}>
-                    Click Me
-                </button>*/}
-            </div>
-        )
     }
 }
 

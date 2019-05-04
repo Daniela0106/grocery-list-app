@@ -1,0 +1,40 @@
+.Products-main-container {
+  width: 100%;
+  margin-top: 115px;
+
+  .Products {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 450px;
+    overflow-y:scroll;
+
+    .product-item {
+      border-radius: 15px;
+
+      &:hover{
+        border-radius: 0;
+      }
+    }
+
+    .search-placeholder {
+      height: 2px;
+      margin: 5px;
+      padding: 0 10px;
+      background-color: transparent;
+      border-color: transparent;
+    }
+
+  }
+
+  .Products>* {
+    flex-basis: 150px;
+    flex-grow: 1;
+    padding: 30px 10px;
+    text-align: center;
+    margin: 5px;
+    width: 150px;
+    border: 2px solid $secondary-color;
+    background-color: $base-color;
+    height: 50px;
+  }
+}
