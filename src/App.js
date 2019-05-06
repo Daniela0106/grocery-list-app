@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import HeaderComponent from './components/headerComponent';
 import FooterComponent from './components/footerComponent';
+import ProductsComponent from './components/productsComponent';
 import './styles/App.scss';
 import Products from "./services/productsService";
 
@@ -11,7 +12,7 @@ class App extends Component {
             <div className="App">
                 <HeaderComponent/>
                 <div className="Products-main-container">
-                    <Products/>
+                    <ProductsComponent/>
                 </div>
                 <FooterComponent/>
             </div>

@@ -1,41 +1,61 @@
-/*import React, {Component} from 'react';
-import productsService from '../services/productsService';
+import React, {Component} from 'react';
+import Product from '../services/productsService';
 import '../styles/App.scss';
 
 class ProductsComponent extends Component {
 
-    constructor (props) {
-        super(props);
-        this.state = {isLoaded: false,
-            items: []};
-        console.log(this.state);
-        //this.handleClick = this.handleClick.bind(this)
+    constructor(props) {
+        super();
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    componentDidMount(){
-        this.setState = productsService();
-        this.state.isLoaded = true;
+    handleClick(e, item) {
+        console.log(item);
+
     }
 
-    render(){
+    randomPriceGenerator() {
+        let randomPrice = Math.random();
+        return randomPrice.toFixed(2);
+    }
 
-        if(this.state){
-            var { isLoaded, items } = this.state;
-
-            if (!isLoaded){
-                return <div>Loading...</div>
-            } else {
-                return <div className="Products">
-                    <ul>
-                        {items.map(item => (
-                            <li key={item.id}>{item.text}</li>
-                        ))};
-                    </ul>
-                </div>
-            }
+    putPricesOnProducts(items) {
+        for (var i = 0; i < items.length; ++i) {
+            items[i].price = this.randomPriceGenerator();
         }
+        return items;
+    }
 
-    };
+    render() {
+        return <Product>
+            {({ isLoaded, items }) => {
+                if (!isLoaded) {
+                    return <div className="Products">
+                        <div>Loading...
+                        </div>
+                    </div>
+                } else {
+                    this.putPricesOnProducts(items);
+
+                    return <div className="Products">
+                        {items.map(item => (
+                            <div className="product-item" key={item.id} onClick={(e) => this.handleClick(e, item)}>
+                                <div className="description">{item.text}</div>
+                                <div className="price">{item.price}</div>
+                            </div>
+                        ))}
+
+                        <div className="search-placeholder"></div>
+                        <div className="search-placeholder"></div>
+                        <div className="search-placeholder"></div>
+                        <div className="search-placeholder"></div>
+
+                    </div>
+
+                }
+            }}
+        </Product>
+    }
 }
 
-export default ProductsComponent;*/
+export default ProductsComponent;
