@@ -26,8 +26,6 @@
       width: 80vw;
     }
 
-
-
   }
 
   .header-logo{
@@ -61,20 +59,6 @@
     float: right;
     flex-wrap: nowrap;
     width: 70vw;
-
-    a {
-      float: right;
-      padding-right: 5vw;
-      line-height: 40px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      color: inherit;
-
-      &:hover{
-        color: black;
-      }
-    }
 
     .search-button {
       padding: 16px;

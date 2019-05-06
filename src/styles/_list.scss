@@ -1,0 +1,31 @@
+.list {
+  float: right;
+  padding-right: 5vw;
+  line-height: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &:hover{
+    color: black;
+  }
+
+  #list-container{
+    background-color: $base-color;
+    width: 150px;
+    height: 300px;
+    display: none;
+  }
+
+}
+
+
+
+/*list {
+
+  color: inherit;
+
+  &:hover{
+    color: black;
+  }
+}*/
