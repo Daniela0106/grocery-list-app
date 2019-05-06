@@ -4,7 +4,7 @@ import '../styles/App.scss';
 function HeaderComponent() {
     return (
         <div className="App-header">
-            <div className="header-logo">Logo goes here</div>
+            <div className="header-logo"></div>
             <div className="header-navigation">
                 <a href="#about">My list</a>
                 <div className="search-container">

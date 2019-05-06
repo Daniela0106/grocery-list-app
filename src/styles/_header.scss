@@ -1,6 +1,6 @@
 .App-header {
   background-color: rgba(193, 91, 28, 0.7);
-  height: 25px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,9 +16,27 @@
     position: relative;
   }
 
+  @media screen and (max-width: 1330px){
+    .header-logo {
+      width: 20vw;
+      height: 64px;
+    }
+
+    .header-navigation {
+      width: 80vw;
+    }
+
+
+
+  }
+
   .header-logo{
+    margin-left: 30px;
     width: 30vw;
+    height: 88px;
     float: left;
+    background: url(./assets/logo.png) no-repeat center center;
+    background-size: cover;
   }
 
   .header-navigation .search-container {
@@ -52,7 +70,6 @@
       overflow: hidden;
       text-overflow: ellipsis;
       color: inherit;
-      text-decoration: none;
 
       &:hover{
         color: black;
@@ -64,7 +81,7 @@
       margin-top: 5px;
       margin-left: 39vw;
       border: 0;
-      background: url(assets/search-solid.svg);
+      background: url(./assets/search-solid.svg);
       background-position: 0;
       background-repeat: no-repeat;
       position: absolute;

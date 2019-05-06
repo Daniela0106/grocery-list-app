@@ -9,16 +9,34 @@
   bottom: 0;
   line-height: 10;
 
-  .contact-us, .description {
+  .contact, .description {
     display: inline-flex;
     position: relative;
     color: $accent-color;
-    padding: 10px;
     border-right: $base-color;
-    
-    @media screen and (max-width: 768px) {
-      display: block;
+  }
+
+  .contact {
+    background: url(assets/linkedin.svg);
+    background-position: 0;
+    background-repeat: no-repeat;
+    padding: 15px;
+    height: 15px;
+  }
+
+  .description {
+    padding: 10px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .contact, .description {
       line-height: 2.5;
+      font-size: 0.8rem;
+    }
+
+    .contact {
+      height: 10px;
+      padding: 10px;
     }
   }
 }
