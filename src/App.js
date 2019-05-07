@@ -11,9 +11,7 @@ class App extends Component {
         return (
             <div className="App">
                 <HeaderComponent/>
-                <div className="Products-main-container">
-                    <ProductsComponent/>
-                </div>
+                <ProductsComponent/>
                 <FooterComponent/>
             </div>
         )

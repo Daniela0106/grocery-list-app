@@ -1,57 +1,55 @@
 import React, {Component} from 'react';
 import Product from '../services/productsService';
+import ListComponent from './listComponent';
 import '../styles/App.scss';
 
 class ProductsComponent extends Component {
 
     constructor(props) {
         super();
+        this.state = {
+            chosenItems: []
+        };
         this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick(e, item) {
         console.log(item);
-
-    }
-
-    randomPriceGenerator() {
-        let randomPrice = Math.random();
-        return randomPrice.toFixed(2);
-    }
-
-    putPricesOnProducts(items) {
-        for (var i = 0; i < items.length; ++i) {
-            items[i].price = this.randomPriceGenerator();
-        }
-        return items;
+        let joined = this.state.chosenItems.concat(item);
+        console.log(JSON.stringify(joined));
+        this.setState({chosenItems: joined});
+        console.log("this.state: ****** " + this.state);
     }
 
     render() {
+        console.log(this.props);
         return <Product>
-            {({ isLoaded, items }) => {
+            {({isLoaded, items}) => {
                 if (!isLoaded) {
                     return <div className="Products">
                         <div>Loading...
                         </div>
                     </div>
                 } else {
-                    this.putPricesOnProducts(items);
+                    return <div>
+                        <ListComponent/>
+                        <div className="Products-main-container">
+                            <div className="Products">
+                                {items.map(item => (
+                                    <div className="product-item" key={item.id}
+                                         onClick={(e) => this.handleClick(e, item)}>
+                                        <div className="description">{item.text}</div>
+                                        <div className="price">{item.price}</div>
+                                    </div>
+                                ))}
 
-                    return <div className="Products">
-                        {items.map(item => (
-                            <div className="product-item" key={item.id} onClick={(e) => this.handleClick(e, item)}>
-                                <div className="description">{item.text}</div>
-                                <div className="price">{item.price}</div>
+                                <div className="search-placeholder"></div>
+                                <div className="search-placeholder"></div>
+                                <div className="search-placeholder"></div>
+                                <div className="search-placeholder"></div>
                             </div>
-                        ))}
-
-                        <div className="search-placeholder"></div>
-                        <div className="search-placeholder"></div>
-                        <div className="search-placeholder"></div>
-                        <div className="search-placeholder"></div>
-
+                        </div>
                     </div>
-
                 }
             }}
         </Product>

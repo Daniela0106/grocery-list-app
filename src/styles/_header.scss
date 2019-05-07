@@ -34,7 +34,12 @@
     height: 88px;
     float: left;
     background: url(./assets/logo.png) no-repeat center center;
-    background-size: cover;
+    background-size: 100% auto;
+
+    @media screen and (max-width: 768px){
+      margin-left: 5px;
+      width: 40vw;
+    }
   }
 
   .header-navigation .search-container {
@@ -47,6 +52,10 @@
       font-size: 1rem;
       border-radius:25px;
       border: 2px solid #ccc;
+
+      @media screen and (max-width: 768px){
+        font-size: 0.9rem;
+      }
     }
 
     .search-bar:focus{
@@ -60,6 +69,10 @@
     flex-wrap: nowrap;
     width: 70vw;
 
+    @media screen and (max-width: 768px){
+      width: 60vw;
+    }
+
     .search-button {
       padding: 16px;
       margin-top: 5px;
@@ -69,28 +82,20 @@
       background-position: 0;
       background-repeat: no-repeat;
       position: absolute;
+
+      @media screen and (max-width: 1200px) {
+        margin-left: 37vw;
+      }
+
+      @media screen and (max-width: 760px) {
+        margin-left: 35vw;
+      }
+
+      @media screen and (max-width: 515px) {
+        margin-left: 33vw;
+      }
     }
 
   }
 
-}
-
-.App-header .header-navigation .search-container .search-bar {
-  @media screen and (max-width: 768px){
-    font-size: 0.9rem;
-  }
-}
-
-.App-header .header-navigation .search-button {
-  @media screen and (max-width: 1200px) {
-    margin-left: 37vw;
-  }
-
-  @media screen and (max-width: 760px) {
-    margin-left: 35vw;
-  }
-
-  @media screen and (max-width: 515px) {
-    margin-left: 33vw;
-  }
 }

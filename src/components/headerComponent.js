@@ -15,7 +15,6 @@ class HeaderComponent extends Component{
                             <input className="search-bar" type="text" placeholder="Find grocery item..." name="search"></input>
                         </form>
                     </div>
-                    <ListComponent/>
                 </div>
             </div>
         );
