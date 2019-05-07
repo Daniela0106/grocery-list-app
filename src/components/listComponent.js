@@ -9,20 +9,28 @@ class ListComponent extends Component {
         };
     }
 
-    handleClick(e, message) {
+    handleClick(e) {
         this.state.listIsShowing = !this.state.listIsShowing;
         document.getElementById('list-container').style.display = this.state.listIsShowing ? 'block' : 'none';
-        console.log("this.state ::: " + this.state.chosenItems? this.state.chosenItems : '');
-        console.log(this.state.listIsShowing);
+    }
+
+    removeFromList(e, item){
+        //TODO Implement funcionality to remove item from the shopping list
     }
 
     render() {
-        console.log(this.props);
-        //return this.props.children({isLoaded, items});
         return <div>
-            <div className="list" onClick={(e) => this.handleClick(e, "display-list")}>
+            <div className="list" onClick={(e) => this.handleClick(e)}>
                 <div className="description">My List</div>
-                <div id="list-container">this.state.chosenItems</div>
+                <div id="list-container">
+                    {this.props.data.map(item => (
+                        <div className="product-item" key={item.id}>
+                            <div className="description">{item.text} {item.price}
+                                <div className="remove" onClick={(e) => this.removeFromList(e, item)}></div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
 
         </div>

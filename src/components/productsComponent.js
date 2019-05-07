@@ -14,25 +14,22 @@ class ProductsComponent extends Component {
     }
 
     handleClick(e, item) {
-        console.log(item);
         let joined = this.state.chosenItems.concat(item);
-        console.log(JSON.stringify(joined));
         this.setState({chosenItems: joined});
-        console.log("this.state: ****** " + this.state);
     }
 
     render() {
-        console.log(this.props);
         return <Product>
             {({isLoaded, items}) => {
                 if (!isLoaded) {
-                    return <div className="Products">
-                        <div>Loading...
+                    return <div className="Products-main-container">
+                        <div className="Products">
+                            Loading...
                         </div>
                     </div>
                 } else {
                     return <div>
-                        <ListComponent/>
+                        <ListComponent data={this.state.chosenItems}/>
                         <div className="Products-main-container">
                             <div className="Products">
                                 {items.map(item => (
