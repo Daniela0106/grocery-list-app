@@ -29,9 +29,11 @@ class ProductService extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://world.openfoodfacts.org/api/v0/product/737628064502.json', {'crossdomain': 'true'})
+        //axios.get('https://world.openfoodfacts.org/api/v0/product/737628064502.json', {'crossdomain': 'true'})
+        axios.get('https://www.food2fork.com/api/search?key=8d9d84e5124f5fec5f930e61ff746e47&q=shredded%20chicken', {'crossdomain': 'true'})
             .then(response => {
-                products = response.data.product.ingredients;
+                console.log(response)
+                products = response.data.recipes;
                 //Since the API doesnt bring any prices, will add those manually
                 products = this.putPricesOnProducts(products);
                 this.setState({

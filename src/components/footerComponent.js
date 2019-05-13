@@ -5,7 +5,7 @@ function FooterComponent() {
     return (
         <div className="App-footer">
             <a href="https://www.linkedin.com/in/danielabarrientosgrisales/">
-                <div className="description">Created by Daniela Barrientos</div>
+                <div className="description">E-Restaurant Shop</div>
                 <div className="contact"></div>
             </a>
         </div>

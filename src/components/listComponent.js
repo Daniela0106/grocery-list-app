@@ -24,8 +24,8 @@ class ListComponent extends Component {
                 <div className="description">My List</div>
                 <div id="list-container">
                     {this.props.data.map(item => (
-                        <div className="product-item" key={item.id}>
-                            <div className="description">{item.text} {item.price}
+                        <div className="product-item" key={item.recipe_id}>
+                            <div className="description">{item.title} {item.price}
                                 <div className="remove" onClick={(e) => this.removeFromList(e, item)}></div>
                             </div>
                         </div>

@@ -33,10 +33,10 @@ class ProductsComponent extends Component {
                         <div className="Products-main-container">
                             <div className="Products">
                                 {items.map(item => (
-                                    <div className="product-item" key={item.id}
+                                    <div className="product-item" key={item.recipe_id}
                                          onClick={(e) => this.handleClick(e, item)}>
-                                        <div className="description">{item.text}</div>
-                                        <div className="price">{item.price}</div>
+                                        <div className="description">{item.title}</div>
+                                        <div className="price">${item.price}</div>
                                     </div>
                                 ))}
 
