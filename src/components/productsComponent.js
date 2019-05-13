@@ -36,14 +36,15 @@ class ProductsComponent extends Component {
                                     <div className="product-item" key={item.recipe_id}
                                          onClick={(e) => this.handleClick(e, item)}>
                                         <div className="description">{item.title}</div>
+                                        <img className="recipeImg" src={item.image_url} />
                                         <div className="price">${item.price}</div>
                                     </div>
                                 ))}
 
-                                <div className="search-placeholder"></div>
-                                <div className="search-placeholder"></div>
-                                <div className="search-placeholder"></div>
-                                <div className="search-placeholder"></div>
+                                <div className="spacing-item-placeholder"></div>
+                                <div className="spacing-item-placeholder"></div>
+                                <div className="spacing-item-placeholder"></div>
+                                <div className="spacing-item-placeholder"></div>
                             </div>
                         </div>
                     </div>

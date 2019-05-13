@@ -33,6 +33,7 @@
     background-color: $secondary-color;
     overflow: scroll;
     margin-top: 12px;
+    z-index: 1;
 
     @media screen and (max-width: 768px) {
       width: 70vw;
