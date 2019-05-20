@@ -28,12 +28,13 @@ class ProductService extends Component {
         return items;
     }
 
-    componentDidMount() {
+/*    componentDidMount() {
         //axios.get('https://world.openfoodfacts.org/api/v0/product/737628064502.json', {'crossdomain': 'true'})
-        axios.get('https://www.food2fork.com/api/search?key=8d9d84e5124f5fec5f930e61ff746e47&q=shredded%20chicken', {'crossdomain': 'true'})
+        axios.get('https://www.food2fork.com/api/search?key=48a5184158847992997be6ecb0cfdb1e&q=shredded%20chicken', {'crossdomain': 'true'})
             .then(response => {
                 console.log(response)
                 products = response.data.recipes;
+                //products = response.data.product.ingredients;
                 //Since the API doesnt bring any prices, will add those manually
                 products = this.putPricesOnProducts(products);
                 this.setState({
@@ -43,13 +44,12 @@ class ProductService extends Component {
 
             })
             .catch(error => console.log('Request failed: ', error));
-    }
+    }*/
 
     render() {
         let {isLoaded, items} = this.state;
         return this.props.children({isLoaded, items});
     }
 }
-
 
 export default ProductService;
