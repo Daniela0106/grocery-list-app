@@ -1,0 +1,39 @@
+.Login-container{
+  color: $base-color;
+  height: 100%;
+  padding-top: 20%;
+
+  button {
+    display: block;
+    width: 15%;
+    height: 10%;
+    padding: 20px;
+    margin-top: 4%;
+    margin-left: 43%;
+    border-radius: 25px;
+    border: none;
+    background-color: $base-color;
+
+    &:hover {
+      background-color: $accent-color;
+      color: $base-color;
+      text-shadow: 2px 0 4px #000000;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .username-field {
+    padding-right: 4px;
+  }
+
+  .password-field {
+    padding-right: 7px;
+  }
+
+  .password-input {
+    margin-top: 12px;
+  }
+}

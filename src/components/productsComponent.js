@@ -24,7 +24,7 @@ class ProductsComponent extends Component {
                 if (!isLoaded) {
                     return <div className="Products-main-container">
                         <div className="Products">
-                            Loading...
+                            <h1>Loading items for you...</h1>
                         </div>
                     </div>
                 } else {
