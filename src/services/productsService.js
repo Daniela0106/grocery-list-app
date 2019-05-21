@@ -28,7 +28,7 @@ class ProductService extends Component {
         return items;
     }
 
-/*    componentDidMount() {
+    componentDidMount() {
         //axios.get('https://world.openfoodfacts.org/api/v0/product/737628064502.json', {'crossdomain': 'true'})
         axios.get('https://www.food2fork.com/api/search?key=48a5184158847992997be6ecb0cfdb1e&q=shredded%20chicken', {'crossdomain': 'true'})
             .then(response => {
@@ -44,7 +44,7 @@ class ProductService extends Component {
 
             })
             .catch(error => console.log('Request failed: ', error));
-    }*/
+    }
 
     render() {
         let {isLoaded, items} = this.state;
