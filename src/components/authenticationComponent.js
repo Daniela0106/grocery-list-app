@@ -14,14 +14,14 @@ class AuthenticationComponent extends Component {
         if(currentUsername != '' && currentPassword != ''){
             for (let i=0; i < users.length; i++){
                 if (userIsIn===false && users[i] && users[i].username === currentUsername && users[i].password === currentPassword){
-                    alert("welcome, "+ currentUsername +"!");
                     userIsIn = true;
-                } else {
-                    if(!userIsIn) {
-                        alert("You need to register. Please do before using this web app!");
-                    }
-                    userIsIn = false;
                 }
+            }
+
+            if(true === userIsIn){
+                alert("welcome, "+ currentUsername +"!");
+            } else {
+                alert("You need to register. Please do before using this web app!");
             }
         }
     }
